@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+#
+# Simple script for use with @semantic-release/exec
+#
+# (OPTIONAL) If you want any files modified by this process
+# checked back in to the repository prior to release,
+# add those files to the list of assets for the
+# @semantic-release/git plugin.
+#
+# shellcheck disable=SC2154
+
+NEXT_VERSION=${1-}
+if [[ -z ${NEXT_VERSION} ]]; then
+  echo "Version missing. expected version as first argument."
+  exit 1
+fi
+
+PKG="jexy-dummy"
+
+# make sure there's no v prefix
+TRIMMED_VERSION="${NEXT_VERSION}"
+if [[ ${TRIMMED_VERSION:0:1} == "v" ]]; then
+  TRIMMED_VERSION=${TRIMMED_VERSION:1}
+fi
+
+echo "${TRIMMED_VERSION}" >${GITHUB_WORKSPACE:-.}/.next-version
+
+echo "setting version ${TRIMMED_VERSION} in ${GITHUB_WORKSPACE:-.}/${PKG}/index.php" >>"${GITHUB_STEP_SUMMARY}"
+if [[ ${RUNNER_OS:-macOS} == "macOS" ]]; then
+  sed -i '' -e "s/RELEASE_VERSION/${TRIMMED_VERSION}/g" "${GITHUB_WORKSPACE:-.}/${PKG}/index.php"
+else
+  sed -i "s/RELEASE_VERSION/${TRIMMED_VERSION}/g" "${GITHUB_WORKSPACE:-.}/${PKG}/index.php"
+fi
+
+echo "setting version ${TRIMMED_VERSION} in ${GITHUB_WORKSPACE:-.}/${PKG}/plugin/languages/jexy.pot" >>"${GITHUB_STEP_SUMMARY}"
+if [[ ${RUNNER_OS:-macOS} == "macOS" ]]; then
+  sed -i '' -e "s/RELEASE_VERSION/${TRIMMED_VERSION}/g" "${GITHUB_WORKSPACE:-.}/${PKG}/plugin/languages/jexy.pot"
+else
+  sed -i "s/RELEASE_VERSION/${TRIMMED_VERSION}/g" "${GITHUB_WORKSPACE:-.}/${PKG}/plugin/languages/jexy.pot"
+fi
+
+make install-deps
+make build
+
+#mkdir -p "build/${PKG}-${NEXT_VERSION}"
+#cp -R jexy-mail/* "build/${PKG}-${NEXT_VERSION}"
+#cp README.md "build/${PKG}-${NEXT_VERSION}"
+#cp CHANGELOG.md "build/${PKG}-${NEXT_VERSION}"
+
+#cd build || exit
+
+#echo "creating .tar.gz archive of ${PKG}-${NEXT_VERSION}" >>"${GITHUB_STEP_SUMMARY}"
+#tar -zcf "${PKG}-${NEXT_VERSION}.tar.gz" "${PKG}-${NEXT_VERSION}"
+
+#echo "creating .zip archive of ${PKG}-${NEXT_VERSION}" >>"${GITHUB_STEP_SUMMARY}"
+#zip -r "${PKG}-${NEXT_VERSION}.zip" "${PKG}-${NEXT_VERSION}"

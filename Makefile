@@ -53,17 +53,8 @@ pot:
 
 # install dependencies
 build-install-deps:
-	@echo "package-lock: " $(wildcard $(STAGEDIR)/$(PKG)/package-lock.json)
-ifneq (,$(wildcard $(STAGEDIR)/$(PKG)/package-lock.json))
-	cd $(STAGEDIR)/$(PKG) && npm install && cd $(REPOTOP)
-else
-	@echo "no package-lock.json found, skipping npm install"
-endif
-ifneq (,$(wildcard $(STAGEDIR)/$(PKG)/composer.lock))
-	cd $(STAGEDIR)/$(PKG) && composer install && cd $(REPOTOP)
-else
-	@echo "no composer.lock found, skipping composer install"
-endif
+	-cd $(STAGEDIR)/$(PKG) && npm install && cd $(REPOTOP)
+	-cd $(STAGEDIR)/$(PKG) && composer install && cd $(REPOTOP)
 .PHONY: build-install-deps
 
 # update dependencies

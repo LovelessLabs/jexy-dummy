@@ -1,0 +1,39 @@
+# Copyright (C) 2023 Loveless Labs
+# This file is distributed under the MIT.
+msgid ""
+msgstr ""
+"Project-Id-Version: Jexy Dummy RELEASE_VERSION\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jexy-dummy\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-04-03T21:18:10+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: jexy-dummy\n"
+
+#. Plugin Name of the plugin
+msgid "Jexy Dummy"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://jexy.com/"
+msgstr ""
+
+#. Description of the plugin
+msgid "A do-nothing plugin for testing stuff."
+msgstr ""
+
+#. Author of the plugin
+msgid "Loveless Labs"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://lovelesslabs.com/"
+msgstr ""
+
+#: blocks/src/dummy-editor-sidebar/index.js:15
+msgid "Panel content"
+msgstr ""

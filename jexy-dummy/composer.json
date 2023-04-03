@@ -1,0 +1,23 @@
+{
+  "name": "jexy/dummy",
+  "type": "library",
+  "license": "MIT",
+  "config": {
+    "bin-dir": "bin",
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "prepend-autoloader": false,
+    "classmap-authoritative": true
+  },
+  "description": "Jexy Dummy plugin for WordPress",
+  "autoload": {
+    "psr-4": {
+      "Jexy\\Dummy\\": [
+        "plugin/includes/",
+        "plugin/admin/",
+        "plugin/public/",
+        "blocks/src/"
+      ]
+    }
+  }
+}

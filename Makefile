@@ -7,6 +7,7 @@ ECS ?= vendor/bin/ecs
 # get NEXT_VERSION from prep-release script
 VERSION = $(shell cat .next-version)
 REPOTOP = $(shell pwd)
+UNAME = $(shell uname)
 
 PKG = jexy-dummy
 
@@ -14,6 +15,10 @@ BLOCKSDIR ?= $(PKG)/blocks
 CMDBUILDBLOCKS ?= npm run build
 
 CMDBUILDADMIN ?= npm run build:admin
+
+# we copy the whole directory in here first,
+# then set the next version, then build the plugin
+STAGEDIR ?= .stage
 
 all: target-list
 
@@ -27,6 +32,7 @@ target-list:
 	@echo "  update-deps        update npm and composer dependencies"
 	@echo "  cs                 run coding style checks"
 	@echo "  cloc               generate Lines-of-Code stats"
+	@echo "	 pot                generate language file"
 	@echo "  todo               show to-do items per file"
 	@echo "  test               run all tests"
 	@echo "  test-coverage      run all tests, with code coverage"
@@ -39,19 +45,26 @@ check-vars:
 	@echo $(VERSION)
 .PHONY: check-vars
 
+# generate language file
+pot:
+	@echo "generating language file"
+	@cd $(PKG) && wp i18n make-pot . plugin/languages/$(PKG).pot && cd $(REPOTOP)
+.PHONY: pot
+
 # install dependencies
-install-deps:
-ifneq (,$(wildcard $(PKG)/package-lock.json))
-	cd $(PKG) && npm install && cd $(REPOTOP)
+build-install-deps:
+	@echo "package-lock: " $(wildcard $(STAGEDIR)/$(PKG)/package-lock.json)
+ifneq (,$(wildcard $(STAGEDIR)/$(PKG)/package-lock.json))
+	cd $(STAGEDIR)/$(PKG) && npm install && cd $(REPOTOP)
 else
 	@echo "no package-lock.json found, skipping npm install"
 endif
-ifneq (,$(wildcard $(PKG)/composer.lock))
-	cd $(PKG) && composer install && cd $(REPOTOP)
+ifneq (,$(wildcard $(STAGEDIR)/$(PKG)/composer.lock))
+	cd $(STAGEDIR)/$(PKG) && composer install && cd $(REPOTOP)
 else
 	@echo "no composer.lock found, skipping composer install"
 endif
-.PHONY: install-deps
+.PHONY: build-install-deps
 
 # update dependencies
 update-deps:
@@ -61,23 +74,29 @@ update-deps:
 
 # clean up build files
 clean:
-	rm -rf build/*
+	rm -rf build/* $(STAGEDIR)
 .PHONY: clean
 
-build: clean install-deps build-blocks-js build-admin-ui
+fresh-stage:
+	rm -rf $(STAGEDIR)
+	mkdir -p $(STAGEDIR)
+	find $(PKG) -depth | grep -v node_modules | cpio -pdm $(STAGEDIR)
+	-cp {LICENSE,CHANGELOG.md,README.md} $(STAGEDIR)
+.PHONY: fresh-stage
+
+build: clean fresh-stage build-set-version build-install-deps build-blocks-js build-admin-ui
 	# create build directory
 	mkdir -p build/$(PKG)-$(VERSION)/$(PKG)
 	# copy main files
-	-cp $(PKG)/composer.* build/$(PKG)-$(VERSION)/$(PKG)
-	-cp $(PKG)/*.php build/$(PKG)-$(VERSION)/$(PKG)
-	-cp $(PKG)/readme.txt build/$(PKG)-$(VERSION)/$(PKG)
-	-cp LICENSE build/$(PKG)-$(VERSION)/$(PKG)
-	-cp CHANGELOG.md build/$(PKG)-$(VERSION)/$(PKG)
+	-cp $(STAGEDIR)/$(PKG)/composer.* build/$(PKG)-$(VERSION)/$(PKG)
+	-cp $(STAGEDIR)/$(PKG)/*.php build/$(PKG)-$(VERSION)/$(PKG)
+	-cp $(STAGEDIR)/$(PKG)/readme.txt build/$(PKG)-$(VERSION)/$(PKG)
+	-cp $(STAGEDIR)/LICENSE build/$(PKG)-$(VERSION)/$(PKG)
+	-cp $(STAGEDIR)/CHANGELOG.md build/$(PKG)-$(VERSION)/$(PKG)
 	# now copy directories
-	-cp -R $(PKG)/vendor build/$(PKG)-$(VERSION)/$(PKG)
-	-cp -R $(PKG)/plugin build/$(PKG)-$(VERSION)/$(PKG)
-	# dump autoloader
-	-cd build/$(PKG)-$(VERSION)/$(PKG) && composer dump-autoload --optimize && cd $(REPOTOP)
+	-cp -R $(STAGEDIR)/$(PKG)/vendor build/$(PKG)-$(VERSION)/$(PKG)
+	-cp -R $(STAGEDIR)/$(PKG)/plugin build/$(PKG)-$(VERSION)/$(PKG)
+	# cleanup
 	-cd build && find . -name '.DS_Store' -type f -delete && cd $(REPOTOP)
 	cd build/$(PKG)-$(VERSION) && zip -r ../$(PKG)-$(VERSION).zip $(PKG) && cd $(REPOTOP)
 	cd build/$(PKG)-$(VERSION) && tar -zcf ../$(PKG)-$(VERSION).tar.gz $(PKG) && cd $(REPOTOP)
@@ -87,22 +106,30 @@ build-blocks-js:
 ifneq (,$(wildcard $(BLOCKSDIR)/src))
 	mkdir -p build/$(PKG)-$(VERSION)/$(PKG)/blocks
 	# build gutenberg blocks
-	cd $(PKG) && $(CMDBUILDBLOCKS) && cd $(REPOTOP)
+	cd $(STAGEDIR)/$(PKG) && $(CMDBUILDBLOCKS) && cd $(REPOTOP)
 	# copy block files
-	cp -R $(BLOCKSDIR)/dist build/$(PKG)-$(VERSION)/$(PKG)/blocks
+	cp -R $(STAGEDIR)/$(BLOCKSDIR)/dist build/$(PKG)-$(VERSION)/$(PKG)/blocks
 else
-	@echo "no blocks found in $(BLOCKSDIR)/src, skipping build"
+	@echo "no blocks found in $(STAGEDIR)/$(BLOCKSDIR)/src, skipping build"
 endif
 .PHONY: build-blocks
 
 build-admin-ui:
 ifneq (,$(wildcard $(PKG)/plugin/admin/src))
 	# build admin js & css
-	cd $(PKG) && $(CMDBUILDADMIN) && cd $(REPOTOP)
+	cd $(STAGEDIR)/$(PKG) && $(CMDBUILDADMIN) && cd $(REPOTOP)
 else
-	@echo "no admin ui found in $(PKG)/plugin/admin/src, skipping build"
+	@echo "no admin ui found in $(STAGEDIR)/$(PKG)/plugin/admin/src, skipping build"
 endif
 .PHONY: build-admin-ui
+
+build-set-version:
+ifeq ($(UNAME),Darwin)
+	grep -rl RELEASE_VERSION --exclude-dir node_modules $(STAGEDIR) | xargs sed -i '' -e 's/RELEASE_VERSION/$(VERSION)/g'
+else
+	grep -rl RELEASE_VERSION --exclude-dir node_modules $(STAGEDIR) | xargs sed -i 's/RELEASE_VERSION/$(VERSION)/g'
+endif
+.PHONY: build-set-version
 
 
 # package:

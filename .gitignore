@@ -1,12 +1,11 @@
 .envrc
 .DS_Store
-*.sublime-workspace
 build/
 stubs/
 .builds/
-jexy-mail/node_modules/
+*/node_modules/
 .next-version
-jexy-mail/scratch
+.stage
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,linux,textmate,visualstudiocode,sublimetext,jetbrains+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,linux,textmate,visualstudiocode,sublimetext,jetbrains+all

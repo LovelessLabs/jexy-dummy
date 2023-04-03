@@ -1,0 +1,43 @@
+{
+  "name": "jexy-dummy",
+  "version": "RELEASE_VERSION",
+  "scripts": {
+    "build": "wp-scripts build --webpack-src-dir=./blocks/src --config-name blocks",
+    "build:admin": "wp-scripts build --webpack-src-dir=./plugin/admin/src --config-name admin",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "debug": "wp-scripts build --inspect-brk --webpack-src-dir=./blocks/src --config-name blocks",
+    "debug:admin": "wp-scripts build --inspect-brk --webpack-src-dir=./plugin/admin/src --config-name admin",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start --webpack-src-dir=./blocks/src --webpack-devtool=eval-cheap-source-map --config-name blocks",
+    "start:admin": "wp-scripts start --webpack-src-dir=./plugin/admin/src --webpack-devtool=eval-cheap-source-map --config-name admin",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  },
+  "author": "claylo",
+  "homepage": "https://jexy.com",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "@wordpress/components": "^23.7.0",
+    "@wordpress/data": "^9.0.0",
+    "@wordpress/scripts": "^26.0.0",
+    "autoprefixer": "^10.4.14",
+    "iframe-resizer": "^4.3.6",
+    "postal-mime": "^1.0.16",
+    "postcss": "^8.4.21",
+    "postcss-nested-ancestors": "^3.0.0",
+    "postcss-preset-env": "^8.2.0",
+    "tailwindcss": "^3.2.7",
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.16",
+    "@tailwindcss/container-queries": "^0.1.0",
+    "@wordpress/api-fetch": "^6.26.0"
+  }
+}

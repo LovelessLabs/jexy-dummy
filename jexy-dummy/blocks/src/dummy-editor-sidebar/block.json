@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "jexy-dummy/dummy-editor-sidebar",
+  "version": "RELEASE_VERSION",
+  "title": "Dummy Editor Sidebar",
+  "category": "widgets",
+  "icon": "email",
+  "description": "An editor block that does nothing.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "jexy",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

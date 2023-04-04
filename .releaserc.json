@@ -50,7 +50,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "wordpress-changelog ${nextRelease.version}"
+        "prepareCmd": "wordpress-changelog ${nextRelease.version} ${nextRelease} ${releases}"
       }
     ],
     [

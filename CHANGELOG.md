@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-alpha.3](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2023-04-04)
+
+
+### Fixed
+
+* see what wordpress-changelog gets us ([fa54c52](https://github.com/LovelessLabs/jexy-dummy/commit/fa54c52e54fe931fddf3a1d9bdaa05df59ccf9de))
+
 ## [1.0.0-alpha.2](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2023-04-04)
 
 

@@ -50,7 +50,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "wordpress-make ${nextRelease.version} '${JSON.stringify(nextRelease)}' '${JSON.stringify(context)}'"
+        "prepareCmd": "wordpress-make ${nextRelease.version} '${JSON.stringify(nextRelease)}' '${JSON.stringify(lastRelease)}' '${JSON.stringify(commits)}'"
       }
     ],
     [

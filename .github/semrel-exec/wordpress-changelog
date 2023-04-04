@@ -10,8 +10,14 @@ $out = json_encode($args, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 $out .= PHP_EOL . PHP_EOL;
 // $out .= $changelog;
 $out .= PHP_EOL . PHP_EOL;
-$out .= print_r($_SERVER, true);
-
+// $out .= print_r($_SERVER, true);
+$s = [];
+foreach ($_SERVER as $k => $v) {
+    if (strpos($k, 'GITHUB_') === false && strpos($k, 'GPG_') === false) {
+        $s[$k] = $v;
+    }
+}
+$out .= print_r($s, true);
 $GITHUB_WORKSPACE = getenv('GITHUB_WORKSPACE');
 $GITHUB_STEP_SUMMARY = getenv('GITHUB_STEP_SUMMARY');
 

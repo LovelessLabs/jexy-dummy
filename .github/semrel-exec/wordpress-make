@@ -1,5 +1,7 @@
 #!/usr/bin/env php
 <?php
+$GITHUB_WORKSPACE = getenv('GITHUB_WORKSPACE');
+
 $args = $argv;
 array_shift($args);
 $version = array_shift($args);
@@ -18,8 +20,11 @@ foreach ($_SERVER as $k => $v) {
     }
 }
 $out .= print_r($s, true);
+$out .= PHP_EOL . PHP_EOL;
+$out .= file_get_contents("$GITHUB_WORKSPACE/CHANGELOG.md");
 
-$GITHUB_WORKSPACE = getenv('GITHUB_WORKSPACE');
+
+
 $GITHUB_STEP_SUMMARY = getenv('GITHUB_STEP_SUMMARY');
 
 file_put_contents("$GITHUB_WORKSPACE/jexy-dummy/readme.txt", $out);

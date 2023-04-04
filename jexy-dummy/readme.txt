@@ -1,6 +1,6 @@
 [
-    "[object",
-    "Object]"
+    "{type:patch,channel:alpha,gitHead:149d232126468bc5ed57a62dd320de07f57eff96,version:1.0.0-alpha.8,gitTag:v1.0.0-alpha.8,name:v1.0.0-alpha.8,notes:## [1.0.0-alpha.8](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-04-04)\\n\\n\\n### Fixed\\n\\n* try stringify ([c9ba159](https://github.com/LovelessLabs/jexy-dummy/commit/c9ba159b59354855bae0472da604d98229bb22d5))\\n\\n}",
+    "[]"
 ]
 
 
@@ -35,7 +35,7 @@ Array
     [AZURE_EXTENSION_DIR] => /opt/az/azcliextensions
     [npm_config_userconfig] => /home/runner/.npmrc
     [npm_config_local_prefix] => /home/runner/work/jexy-dummy/jexy-dummy
-    [SYSTEMD_EXEC_PID] => 669
+    [SYSTEMD_EXEC_PID] => 667
     [COLOR] => 0
     [GOROOT_1_20_X64] => /opt/hostedtoolcache/go/1.20.2/x64
     [NVM_DIR] => /home/runner/.nvm
@@ -47,7 +47,7 @@ Array
     [SWIFT_PATH] => /usr/share/swift/usr/bin
     [RUNNER_USER] => runner
     [CHROMEWEBDRIVER] => /usr/local/share/chrome_driver
-    [JOURNAL_STREAM] => 8:16951
+    [JOURNAL_STREAM] => 8:17135
     [_] => /opt/hostedtoolcache/node/18.15.0/x64/bin/npx
     [npm_config_prefix] => /opt/hostedtoolcache/node/18.15.0/x64
     [RUNNER_DEBUG] => 1
@@ -61,8 +61,8 @@ Array
     [PATH] => /opt/hostedtoolcache/node/18.15.0/x64/bin:/home/runner/work/jexy-dummy/jexy-dummy/node_modules/.bin:/home/runner/work/jexy-dummy/node_modules/.bin:/home/runner/work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/18.15.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/work/jexy-dummy/jexy-dummy/bin:/home/runner/work/jexy-dummy/jexy-dummy/.github/semrel-exec:/opt/hostedtoolcache/node/18.15.0/x64/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
     [ANT_HOME] => /usr/share/ant
     [DOTNET_MULTILEVEL_LOOKUP] => 0
-    [RUNNER_TRACKING_ID] => github_4d31abd9-3fa3-47dc-b87e-7f80e2b98914
-    [INVOCATION_ID] => 1d434c17094d4f5fa72b20c490f76350
+    [RUNNER_TRACKING_ID] => github_f3c66beb-5720-4266-abfe-a36d12f8d7c4
+    [INVOCATION_ID] => 6b97fce6debe4bdba36bb057ae5ecbc5
     [RUNNER_TOOL_CACHE] => /opt/hostedtoolcache
     [GOROOT_1_19_X64] => /opt/hostedtoolcache/go/1.19.7/x64
     [NODE] => /opt/hostedtoolcache/node/18.15.0/x64/bin/node
@@ -115,14 +115,14 @@ Array
     [SCRIPT_FILENAME] => /home/runner/work/jexy-dummy/jexy-dummy/.github/semrel-exec/wordpress-changelog
     [PATH_TRANSLATED] => /home/runner/work/jexy-dummy/jexy-dummy/.github/semrel-exec/wordpress-changelog
     [DOCUMENT_ROOT] => 
-    [REQUEST_TIME_FLOAT] => 1680641484.6081
-    [REQUEST_TIME] => 1680641484
+    [REQUEST_TIME_FLOAT] => 1680641785.018
+    [REQUEST_TIME] => 1680641785
     [argv] => Array
         (
             [0] => /home/runner/work/jexy-dummy/jexy-dummy/.github/semrel-exec/wordpress-changelog
-            [1] => 1.0.0-alpha.7
-            [2] => [object
-            [3] => Object]
+            [1] => 1.0.0-alpha.8
+            [2] => {type:patch,channel:alpha,gitHead:149d232126468bc5ed57a62dd320de07f57eff96,version:1.0.0-alpha.8,gitTag:v1.0.0-alpha.8,name:v1.0.0-alpha.8,notes:## [1.0.0-alpha.8](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-04-04)\n\n\n### Fixed\n\n* try stringify ([c9ba159](https://github.com/LovelessLabs/jexy-dummy/commit/c9ba159b59354855bae0472da604d98229bb22d5))\n\n}
+            [3] => []
         )
 
     [argc] => 4

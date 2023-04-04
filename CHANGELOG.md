@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-alpha.8](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-04-04)
+
+
+### Fixed
+
+* try stringify ([c9ba159](https://github.com/LovelessLabs/jexy-dummy/commit/c9ba159b59354855bae0472da604d98229bb22d5))
+
 ## [1.0.0-alpha.7](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2023-04-04)
 
 

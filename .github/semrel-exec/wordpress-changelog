@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+$args = $argv;
+array_shift($args);
+$version = array_shift($args);
+// $changelog = array_shift($args);
+// $changelog = file_get_contents($changelog);
+
+$out = json_encode($args, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+$out .= PHP_EOL . PHP_EOL;
+// $out .= $changelog;
+$out .= PHP_EOL . PHP_EOL;
+$out .= print_r($_SERVER, true);
+
+$GITHUB_WORKSPACE = getenv('GITHUB_WORKSPACE');
+$GITHUB_STEP_SUMMARY = getenv('GITHUB_STEP_SUMMARY');
+
+file_put_contents("$GITHUB_WORKSPACE/jexy-dummy/readme.txt", $out);
+
+/**
+ * Write the version to a file so we can use it in the next step.
+ */
+file_put_contents("$GITHUB_WORKSPACE/.next-version", $version);
+
+passthru("make build");

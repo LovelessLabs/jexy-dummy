@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-alpha.9](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2023-04-04)
+
+
+### Fixed
+
+* add lastRelease and commits ([d1fd58f](https://github.com/LovelessLabs/jexy-dummy/commit/d1fd58f5f63f9e635184d8a260768c2d2e636c48))
+* more experiments with prepare hook ([a60a1ac](https://github.com/LovelessLabs/jexy-dummy/commit/a60a1acaf0a1472748532770586a5a4e4ff4b77b))
+* try context ([1f56ed2](https://github.com/LovelessLabs/jexy-dummy/commit/1f56ed2b3dc234b808517fdc1d1049f5d0430bdd))
+
 ## [1.0.0-alpha.8](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-04-04)
 
 

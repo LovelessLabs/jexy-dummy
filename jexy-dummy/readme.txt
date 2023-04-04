@@ -32,7 +32,7 @@ Array
     [AZURE_EXTENSION_DIR] => /opt/az/azcliextensions
     [npm_config_userconfig] => /home/runner/.npmrc
     [npm_config_local_prefix] => /home/runner/work/jexy-dummy/jexy-dummy
-    [SYSTEMD_EXEC_PID] => 678
+    [SYSTEMD_EXEC_PID] => 668
     [COLOR] => 0
     [GOROOT_1_20_X64] => /opt/hostedtoolcache/go/1.20.2/x64
     [NVM_DIR] => /home/runner/.nvm
@@ -44,7 +44,7 @@ Array
     [SWIFT_PATH] => /usr/share/swift/usr/bin
     [RUNNER_USER] => runner
     [CHROMEWEBDRIVER] => /usr/local/share/chrome_driver
-    [JOURNAL_STREAM] => 8:17029
+    [JOURNAL_STREAM] => 8:17253
     [_] => /opt/hostedtoolcache/node/18.15.0/x64/bin/npx
     [npm_config_prefix] => /opt/hostedtoolcache/node/18.15.0/x64
     [RUNNER_DEBUG] => 1
@@ -58,8 +58,8 @@ Array
     [PATH] => /opt/hostedtoolcache/node/18.15.0/x64/bin:/home/runner/work/jexy-dummy/jexy-dummy/node_modules/.bin:/home/runner/work/jexy-dummy/node_modules/.bin:/home/runner/work/node_modules/.bin:/home/runner/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/opt/hostedtoolcache/node/18.15.0/x64/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/home/runner/work/jexy-dummy/jexy-dummy/bin:/home/runner/work/jexy-dummy/jexy-dummy/.github/semrel-exec:/opt/hostedtoolcache/node/18.15.0/x64/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
     [ANT_HOME] => /usr/share/ant
     [DOTNET_MULTILEVEL_LOOKUP] => 0
-    [RUNNER_TRACKING_ID] => github_bfb706a6-1033-4bac-af6a-525793b31947
-    [INVOCATION_ID] => 7d6e51c5e6f8425989b7872d4e73a882
+    [RUNNER_TRACKING_ID] => github_3b328890-bcf8-4b4f-9177-f0c52d5211e3
+    [INVOCATION_ID] => 8af80ba943ea4e2399602f6dc016c452
     [RUNNER_TOOL_CACHE] => /opt/hostedtoolcache
     [GOROOT_1_19_X64] => /opt/hostedtoolcache/go/1.19.7/x64
     [NODE] => /opt/hostedtoolcache/node/18.15.0/x64/bin/node
@@ -112,12 +112,15 @@ Array
     [SCRIPT_FILENAME] => /home/runner/work/jexy-dummy/jexy-dummy/.github/semrel-exec/wordpress-changelog
     [PATH_TRANSLATED] => /home/runner/work/jexy-dummy/jexy-dummy/.github/semrel-exec/wordpress-changelog
     [DOCUMENT_ROOT] => 
-    [REQUEST_TIME_FLOAT] => 1680640088.656
-    [REQUEST_TIME] => 1680640088
+    [REQUEST_TIME_FLOAT] => 1680640880.9085
+    [REQUEST_TIME] => 1680640880
     [argv] => Array
         (
             [0] => /home/runner/work/jexy-dummy/jexy-dummy/.github/semrel-exec/wordpress-changelog
+            [1] => 1.0.0-alpha.6
         )
 
-    [argc] => 1
+    [argc] => 2
 )
+
+

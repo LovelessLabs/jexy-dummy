@@ -6,6 +6,9 @@ $version = array_shift($args);
 // $changelog = array_shift($args);
 // $changelog = file_get_contents($changelog);
 
+// anything from STDIN?
+$in = stream_get_contents(STDIN);
+
 $out = json_encode($args, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 $out .= PHP_EOL . PHP_EOL;
 // $out .= $changelog;
@@ -18,6 +21,10 @@ foreach ($_SERVER as $k => $v) {
     }
 }
 $out .= print_r($s, true);
+
+$out .= PHP_EOL . PHP_EOL;
+$out .= $in;
+
 $GITHUB_WORKSPACE = getenv('GITHUB_WORKSPACE');
 $GITHUB_STEP_SUMMARY = getenv('GITHUB_STEP_SUMMARY');
 

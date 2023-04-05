@@ -1,0 +1,5 @@
+== Frequently Asked Questions ==
+
+= Why did you do this? =
+
+**Testing!** I wanted a basic does-nothing plugin to test plugin lifecyle callbacks and automated builds with GitHub Actions.

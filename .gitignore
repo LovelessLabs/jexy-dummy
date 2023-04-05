@@ -6,6 +6,8 @@ stubs/
 */node_modules/
 .next-version
 .stage
+scratch
+*/scratch
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,linux,textmate,visualstudiocode,sublimetext,jetbrains+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,linux,textmate,visualstudiocode,sublimetext,jetbrains+all

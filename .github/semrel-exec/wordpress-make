@@ -5,33 +5,115 @@ $GITHUB_WORKSPACE = getenv('GITHUB_WORKSPACE');
 $args = $argv;
 array_shift($args);
 $version = array_shift($args);
-// $changelog = array_shift($args);
-// $changelog = file_get_contents($changelog);
-
-$out = json_encode($args, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-$out .= PHP_EOL . PHP_EOL;
-// $out .= $changelog;
-$out .= PHP_EOL . PHP_EOL;
-// $out .= print_r($_SERVER, true);
-$s = [];
-foreach ($_SERVER as $k => $v) {
-    if (strpos($k, 'GITHUB_') === false && strpos($k, 'GPG_') === false) {
-        $s[$k] = $v;
-    }
-}
-$out .= print_r($s, true);
-$out .= PHP_EOL . PHP_EOL;
-$out .= file_get_contents("$GITHUB_WORKSPACE/CHANGELOG.md");
-
-
-
-$GITHUB_STEP_SUMMARY = getenv('GITHUB_STEP_SUMMARY');
-
-file_put_contents("$GITHUB_WORKSPACE/jexy-dummy/readme.txt", $out);
 
 /**
  * Write the version to a file so we can use it in the next step.
  */
 file_put_contents("$GITHUB_WORKSPACE/.next-version", $version);
 
+/**
+ * Convert the conventional-commits changelog to a WordPress.org changelog.
+ */
+$changelog = file_get_contents('CHANGELOG.md');
+
+// find all versions but the first one
+preg_match_all('/^## \[(?P<version>[0-9.]+.*)\]\((?P<compareUrl>.*)\) \((?P<releaseDate>.*)\)/mU', $changelog, $matches, PREG_OFFSET_CAPTURE);
+
+// find the first release
+preg_match('/^## (?P<version>[0-9.]+\S*)(?P<compareUrl> )\((?P<releaseDate>.*)\)/mU', $changelog, $first, PREG_OFFSET_CAPTURE);
+
+// push the first release onto the matches
+$matches[0][] = $first[0];
+$matches['version'][] = $first['version'];
+$matches['compareUrl'][] = $first['compareUrl'];
+$matches['releaseDate'][] = $first['releaseDate'];
+
+$changeTypeMap = [
+    'Added' => 'New',
+    'Fixed' => 'Fix',
+    'Changed' => 'Update',
+];
+
+$releases = [];
+
+// loop through matches and find all change types
+foreach ($matches[0] as $i => $match_lines) {
+    $version = $matches['version'][$i][0];
+    $compareUrl = $matches['compareUrl'][$i][0];
+    $releaseDate = $matches['releaseDate'][$i][0];
+
+    $rd = DateTimeImmutable::createFromFormat('Y-m-d', $releaseDate);
+    $longDate = $rd->format('jS F Y');
+
+    $first = false;
+    if (empty($compareUrl)) {
+        $first = true;
+    }
+
+    $start = $match_lines[1] + strlen($match_lines[0]) + 1;
+    if (!$first) {
+        $end = $matches[0][$i + 1][1] ?? strlen($changelog);
+    } else {
+        $end = strlen($changelog);
+    }
+    $length = $end - $start;
+    $match = substr($changelog, $start, $length);
+
+    $match = trim($match);
+
+    preg_match_all('/^### (?P<type>[A-Za-z]+)/m', $match, $changes, PREG_OFFSET_CAPTURE);
+    // echo $version . PHP_EOL;
+
+    $compareUrl = trim($compareUrl);
+    $releases[$version] = [
+        'version' => $version,
+        'compareUrl' => $compareUrl,
+        'releaseDate' => $releaseDate,
+        'longDate' => $longDate,
+        'changes' => [],
+    ];
+
+    foreach ($changes[0] as $j => $type_line) {
+        $type = $changes['type'][$j][0];
+
+        $start = $type_line[1] + strlen($type_line[0]) + 1;
+        $end = $changes[0][$j + 1][1] ?? strlen($match);
+        $length = $end - $start;
+        $entries = substr($match, $start, $length);
+        $entries = trim($entries);
+        if (empty($entries)) {
+            continue;
+        }
+
+        // clean entries of github links
+        $entries = preg_replace('/\(\[[a-z0-9]{7}\]\(https.+\)\)/', '', $entries);
+
+        // split entries into lines and trim
+        $entries = array_map('trim', array_filter(explode(PHP_EOL, $entries)));
+
+        foreach ($entries as $entry) {
+            $entry = ltrim($entry, '* ');
+            if (array_key_exists($type, $changeTypeMap)) {
+                $type = $changeTypeMap[$type];
+            }
+            $releases[$version]['changes'][] = "{$type} - {$entry}";
+        }
+    }
+}
+
+$out = '== Changelog ==' . PHP_EOL . PHP_EOL;
+foreach ($releases as $release) {
+    if (!empty($release['compareUrl'])) {
+        $out .= "= [{$release['version']}]({$release['compareUrl']}) =" . PHP_EOL;
+    } else {
+        $out .= "= {$release['version']} =" . PHP_EOL;
+    }
+    $out .= "*Release Date {$release['longDate']}*" . PHP_EOL . PHP_EOL;
+    $out .= implode(PHP_EOL, $release['changes']) . PHP_EOL . PHP_EOL;
+}
+file_put_contents("$GITHUB_WORKSPACE/readme-partials/05-changelog.txt", $out);
+
+/**
+ * Now build the release.
+ */
 passthru("make build");

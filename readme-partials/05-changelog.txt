@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.22 =
+*Release Date 5th April 2023*
+
+* Fix - info:** format time correctly
+
+See the complete [1.0.0-alpha.22 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) for full details.
+
 = 1.0.0-alpha.21 =
 *Release Date 5th April 2023*
 

@@ -75,15 +75,14 @@ fresh-stage:
 	-cp {LICENSE,CHANGELOG.md,README.md} $(STAGEDIR)
 .PHONY: fresh-stage
 
-build: clean fresh-stage build-set-version build-install-deps build-blocks-js build-admin-ui
+build: clean fresh-stage readmetxt build-set-version build-install-deps build-blocks-js build-admin-ui
 	# create build directory
 	mkdir -p build/$(PKG)-$(VERSION)/$(PKG)
 	# copy main files
 	-cp $(STAGEDIR)/$(PKG)/composer.* build/$(PKG)-$(VERSION)/$(PKG)
 	-cp $(STAGEDIR)/$(PKG)/*.php build/$(PKG)-$(VERSION)/$(PKG)
-	-cp $(STAGEDIR)/$(PKG)/readme.txt build/$(PKG)-$(VERSION)/$(PKG)
 	-cp $(STAGEDIR)/LICENSE build/$(PKG)-$(VERSION)/$(PKG)
-	-cp $(STAGEDIR)/CHANGELOG.md build/$(PKG)-$(VERSION)/$(PKG)
+	-cp $(STAGEDIR)/readme.txt build/$(PKG)-$(VERSION)/$(PKG)
 	# now copy directories
 	-cp -R $(STAGEDIR)/$(PKG)/vendor build/$(PKG)-$(VERSION)/$(PKG)
 	-cp -R $(STAGEDIR)/$(PKG)/plugin build/$(PKG)-$(VERSION)/$(PKG)
@@ -122,6 +121,9 @@ else
 endif
 .PHONY: build-set-version
 
+readmetxt:
+	cat readme-partials/*.txt > $(STAGEDIR)/readme.txt
+.PHONY: readmetxt
 
 # package:
 # 	mkdir -p build/$(PKG)-$(VERSION)/$(PKG)

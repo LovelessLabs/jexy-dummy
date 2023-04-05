@@ -14,7 +14,7 @@ file_put_contents("$GITHUB_WORKSPACE/.next-version", $version);
 /**
  * Convert the conventional-commits changelog to a WordPress.org changelog.
  */
-$changelog = file_get_contents('CHANGELOG.md');
+$changelog = file_get_contents("$GITHUB_WORKSPACE/CHANGELOG.md");
 
 // find all versions but the first one
 preg_match_all('/^## \[(?P<version>[0-9.]+.*)\]\((?P<compareUrl>.*)\) \((?P<releaseDate>.*)\)/mU', $changelog, $matches, PREG_OFFSET_CAPTURE);

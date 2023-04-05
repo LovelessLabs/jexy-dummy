@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.18 =
+*Release Date 5th April 2023*
+
+* Fix - add info.json to release
+
+See the complete [1.0.0-alpha.18 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) for full details.
+
 = 1.0.0-alpha.17 =
 *Release Date 5th April 2023*
 

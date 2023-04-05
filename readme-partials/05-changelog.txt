@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.20 =
+*Release Date 5th April 2023*
+
+* Fix - make sure build dir exists
+
+See the complete [1.0.0-alpha.20 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) for full details.
+
 = 1.0.0-alpha.19 =
 *Release Date 5th April 2023*
 

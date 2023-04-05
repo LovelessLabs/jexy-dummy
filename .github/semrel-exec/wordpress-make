@@ -96,7 +96,7 @@ foreach ($matches[0] as $i => $match_lines) {
             if (array_key_exists($type, $changeTypeMap)) {
                 $type = $changeTypeMap[$type];
             }
-            $releases[$version]['changes'][] = "{$type} - {$entry}";
+            $releases[$version]['changes'][] = "* {$type} - {$entry}";
         }
     }
 }

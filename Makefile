@@ -147,7 +147,7 @@ infojson:
 		--rawfile DESCRIPTION readme-partials/02-description.txt \
 		--rawfile INSTALLATION readme-partials/03-installation.txt \
 		--rawfile FAQ readme-partials/04-faq.txt \
-		-M '. + {version:$$NEXTVERSION,sections:{changelog:$$CHANGELOG,description:$$DESCRIPTION,installation:$$INSTALLATION,faq:$$FAQ}}' updater-info.json > build/info.json
+		-M '. + {version:$$NEXTVERSION,last_updated:(now|strptime("%Y-%m-%d %H:%M:%S")),sections:{changelog:$$CHANGELOG,description:$$DESCRIPTION,installation:$$INSTALLATION,faq:$$FAQ}}' updater-info.json > build/info.json
 .PHONY: infojson
 
 # package:

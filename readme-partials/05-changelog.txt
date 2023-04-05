@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.21 =
+*Release Date 5th April 2023*
+
+* Fix - add current time to info.json
+
+See the complete [1.0.0-alpha.21 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) for full details.
+
 = 1.0.0-alpha.20 =
 *Release Date 5th April 2023*
 

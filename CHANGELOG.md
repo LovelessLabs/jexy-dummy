@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-alpha.21](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2023-04-05)
+
+
+### Fixed
+
+* add current time to info.json ([9976a10](https://github.com/LovelessLabs/jexy-dummy/commit/9976a10fc06494aaa622328fcc872f01875c01c6))
+
 ## [1.0.0-alpha.20](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2023-04-05)
 
 

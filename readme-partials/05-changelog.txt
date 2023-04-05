@@ -1,72 +1,105 @@
 == Changelog ==
 
-= [1.0.0-alpha.14](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) =
+= 1.0.0-alpha.15 =
+*Release Date 5th April 2023*
+
+* Fix - move changeset link to end of changes
+
+See the complete [1.0.0-alpha.15 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) for full details.
+
+= 1.0.0-alpha.14 =
 *Release Date 5th April 2023*
 
 * Fix - add missing readme headers
 
-= [1.0.0-alpha.13](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) =
+See the complete [1.0.0-alpha.14 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) for full details.
+
+= 1.0.0-alpha.13 =
 *Release Date 5th April 2023*
 
 * Fix - use GITHUB_WORKSPACE path
 
-= [1.0.0-alpha.12](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) =
+See the complete [1.0.0-alpha.13 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) for full details.
+
+= 1.0.0-alpha.12 =
 *Release Date 5th April 2023*
 
 * Fix - bullet-list changes in the readme
 
-= [1.0.0-alpha.11](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) =
+See the complete [1.0.0-alpha.12 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) for full details.
+
+= 1.0.0-alpha.11 =
 *Release Date 5th April 2023*
 
 * Fix - include a real WordPress readme.txt
 
-= [1.0.0-alpha.10](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) =
+See the complete [1.0.0-alpha.11 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) for full details.
+
+= 1.0.0-alpha.10 =
 *Release Date 4th April 2023*
 
 * Fix - add config and options
 * Fix - try passing releases again
 
-= [1.0.0-alpha.9](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) =
+See the complete [1.0.0-alpha.10 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) for full details.
+
+= 1.0.0-alpha.9 =
 *Release Date 4th April 2023*
 
 * Fix - add lastRelease and commits
 * Fix - more experiments with prepare hook
 * Fix - try context
 
-= [1.0.0-alpha.8](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) =
+See the complete [1.0.0-alpha.9 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) for full details.
+
+= 1.0.0-alpha.8 =
 *Release Date 4th April 2023*
 
 * Fix - try stringify
 
-= [1.0.0-alpha.7](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) =
+See the complete [1.0.0-alpha.8 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) for full details.
+
+= 1.0.0-alpha.7 =
 *Release Date 4th April 2023*
 
 * Fix - add more args
 
-= [1.0.0-alpha.6](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) =
+See the complete [1.0.0-alpha.7 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) for full details.
+
+= 1.0.0-alpha.6 =
 *Release Date 4th April 2023*
 
 * Fix - check stdin
 
-= [1.0.0-alpha.5](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) =
+See the complete [1.0.0-alpha.6 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) for full details.
+
+= 1.0.0-alpha.5 =
 *Release Date 4th April 2023*
 
 * Fix - see what args come in if we don't specify any
 
-= [1.0.0-alpha.4](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) =
+See the complete [1.0.0-alpha.5 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) for full details.
+
+= 1.0.0-alpha.4 =
 *Release Date 4th April 2023*
 
 * Fix - be careful on exporting env
 
-= [1.0.0-alpha.3](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) =
+See the complete [1.0.0-alpha.4 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) for full details.
+
+= 1.0.0-alpha.3 =
 *Release Date 4th April 2023*
 
 * Fix - see what wordpress-changelog gets us
 
-= [1.0.0-alpha.2](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) =
+See the complete [1.0.0-alpha.3 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) for full details.
+
+= 1.0.0-alpha.2 =
 *Release Date 4th April 2023*
 
 * Fix - use simpler GitHub URI tag in header
+
+See the complete [1.0.0-alpha.2 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) for full details.
 
 = 1.0.0-alpha.1 =
 *Release Date 3rd April 2023*

@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-alpha.15](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2023-04-05)
+
+
+### Fixed
+
+* move changeset link to end of changes ([f2cd3d3](https://github.com/LovelessLabs/jexy-dummy/commit/f2cd3d3c4b8bbdde6c15a3e1be828a16d96b8906))
+
 ## [1.0.0-alpha.14](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2023-04-05)
 
 

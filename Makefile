@@ -71,8 +71,11 @@ clean:
 fresh-stage:
 	rm -rf $(STAGEDIR)
 	mkdir -p $(STAGEDIR)
+	mkdir -p build
 	find $(PKG) -depth | grep -v node_modules | cpio -pdm $(STAGEDIR)
-	-cp {LICENSE,CHANGELOG.md,README.md} $(STAGEDIR)
+	-cp LICENSE $(STAGEDIR)
+	-cp CHANGELOG.md $(STAGEDIR)
+	-cp README.md $(STAGEDIR)
 .PHONY: fresh-stage
 
 build: clean fresh-stage readmetxt infojson build-set-version build-install-deps build-blocks-js build-admin-ui

@@ -115,4 +115,4 @@ file_put_contents("$GITHUB_WORKSPACE/readme-partials/05-changelog.txt", $out);
 /**
  * Now build the release.
  */
-passthru("make build");
+passthru("cd $GITHUB_WORKSPACE && make build");

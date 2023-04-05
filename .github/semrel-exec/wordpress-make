@@ -103,13 +103,12 @@ foreach ($matches[0] as $i => $match_lines) {
 
 $out = '== Changelog ==' . PHP_EOL . PHP_EOL;
 foreach ($releases as $release) {
-    if (!empty($release['compareUrl'])) {
-        $out .= "= [{$release['version']}]({$release['compareUrl']}) =" . PHP_EOL;
-    } else {
-        $out .= "= {$release['version']} =" . PHP_EOL;
-    }
+    $out .= "= {$release['version']} =" . PHP_EOL;
     $out .= "*Release Date {$release['longDate']}*" . PHP_EOL . PHP_EOL;
     $out .= implode(PHP_EOL, $release['changes']) . PHP_EOL . PHP_EOL;
+    if (!empty($release['compareUrl'])) {
+        $out .= "See the complete [{$release['version']} changeset]({$release['compareUrl']}) for full details." . PHP_EOL . PHP_EOL;
+    }
 }
 file_put_contents("$GITHUB_WORKSPACE/readme-partials/05-changelog.txt", $out);
 

@@ -75,7 +75,7 @@ fresh-stage:
 	-cp {LICENSE,CHANGELOG.md,README.md} $(STAGEDIR)
 .PHONY: fresh-stage
 
-build: clean fresh-stage readmetxt build-set-version build-install-deps build-blocks-js build-admin-ui
+build: clean fresh-stage readmetxt infojson build-set-version build-install-deps build-blocks-js build-admin-ui
 	# create build directory
 	mkdir -p build/$(PKG)-$(VERSION)/$(PKG)
 	# copy main files
@@ -137,6 +137,15 @@ readmetxt:
 	cat readme-partials/07-upgrade-notice.txt >> $(STAGEDIR)/readme.txt
 	echo '' >> $(STAGEDIR)/readme.txt
 .PHONY: readmetxt
+
+infojson:
+	jq --rawfile NEXTVERSION .next-version \
+		--rawfile CHANGELOG readme-partials/05-changelog.txt \
+		--rawfile DESCRIPTION readme-partials/02-description.txt \
+		--rawfile INSTALLATION readme-partials/03-installation.txt \
+		--rawfile FAQ readme-partials/04-faq.txt \
+		-M '. + {version:$$NEXTVERSION,sections:{changelog:$$CHANGELOG,description:$$DESCRIPTION,installation:$$INSTALLATION,faq:$$FAQ}}' updater-info.json > build/info.json
+.PHONY: infojson
 
 # package:
 # 	mkdir -p build/$(PKG)-$(VERSION)/$(PKG)

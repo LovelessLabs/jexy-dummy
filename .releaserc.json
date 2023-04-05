@@ -77,6 +77,11 @@
             "path": "build/jexy-dummy-*.tar.gz",
             "name": "jexy-dummy-${nextRelease.version}.tar.gz",
             "label": "jexy-dummy ${nextRelease.version} (tar.gz)"
+          },
+          {
+            "path": "build/info.json",
+            "name": "info.json",
+            "label": "jexy-dummy info.json"
           }
         ]
       }

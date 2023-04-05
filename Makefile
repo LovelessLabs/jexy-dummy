@@ -122,7 +122,20 @@ endif
 .PHONY: build-set-version
 
 readmetxt:
-	cat readme-partials/*.txt > $(STAGEDIR)/readme.txt
+	cat readme-partials/01-header.txt > $(STAGEDIR)/readme.txt
+	echo '' >> $(STAGEDIR)/readme.txt
+	cat readme-partials/02-description.txt >> $(STAGEDIR)/readme.txt
+	echo '' >> $(STAGEDIR)/readme.txt
+	cat readme-partials/03-installation.txt >> $(STAGEDIR)/readme.txt
+	echo '' >> $(STAGEDIR)/readme.txt
+	cat readme-partials/04-faq.txt >> $(STAGEDIR)/readme.txt
+	echo '' >> $(STAGEDIR)/readme.txt
+	cat readme-partials/05-changelog.txt >> $(STAGEDIR)/readme.txt
+	echo '' >> $(STAGEDIR)/readme.txt
+	cat readme-partials/06-screenshots.txt >> $(STAGEDIR)/readme.txt
+	echo '' >> $(STAGEDIR)/readme.txt
+	cat readme-partials/07-upgrade-notice.txt >> $(STAGEDIR)/readme.txt
+	echo '' >> $(STAGEDIR)/readme.txt
 .PHONY: readmetxt
 
 # package:

@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.16 =
+*Release Date 5th April 2023*
+
+* Fix - add Git Updater headers
+
+See the complete [1.0.0-alpha.16 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) for full details.
+
 = 1.0.0-alpha.15 =
 *Release Date 5th April 2023*
 

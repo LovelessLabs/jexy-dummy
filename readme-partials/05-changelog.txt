@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.32 =
+*Release Date 6th April 2023*
+
+* Fix - add object-to-array adjustments to update-info response
+
+See the complete [1.0.0-alpha.32 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) for full details.
+
 = 1.0.0-alpha.31 =
 *Release Date 6th April 2023*
 

@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-alpha.32](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2023-04-06)
+
+
+### Fixed
+
+* add object-to-array adjustments to update-info response ([c03562f](https://github.com/LovelessLabs/jexy-dummy/commit/c03562f16025599f00e94a2f1a44e5092333495e))
+
 ## [1.0.0-alpha.31](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2023-04-06)
 
 

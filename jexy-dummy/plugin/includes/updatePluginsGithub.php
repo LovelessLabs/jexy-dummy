@@ -39,7 +39,8 @@ return function (string $pluginFile) {
             if (!empty($this->meta['ReleaseChannels'])) {
                 $this->releaseChannels = array_map('trim', explode(',', $this->meta['ReleaseChannels']));
             }
-
+            // debugging
+            do_action('qm/debug', $pluginFile);
             add_filter('update_plugins_github.com', [$this, 'onUpdateGitHubPlugins'], 10, 4);
         }
 
@@ -57,13 +58,13 @@ return function (string $pluginFile) {
          */
         public function onUpdateGitHubPlugins($update, $pluginFile, $pluginData, $locales)
         {
+            // debugging
+            do_action('qm/debug', $pluginData);
+
             // if this is not our plugin, bail
             if ($this->pluginFile !== $pluginFile) {
                 return $update;
             }
-
-            // debugging
-            do_action('qm/debug', $pluginData);
 
             $releases = $this->getLatestViableReleases();
             if ($releases == false) {

@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.25 =
+*Release Date 6th April 2023*
+
+* Fix - include the file with the right name
+
+See the complete [1.0.0-alpha.25 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.24...v1.0.0-alpha.25) for full details.
+
 = 1.0.0-alpha.24 =
 *Release Date 6th April 2023*
 

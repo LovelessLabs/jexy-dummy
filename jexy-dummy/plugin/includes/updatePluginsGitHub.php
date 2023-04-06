@@ -31,10 +31,16 @@ return function (string $pluginFile) {
                 'Version' => 'Version',
                 'RepoVisibility' => 'Repo Visibility',
                 'ReleaseChannels' => 'Release Channels',
+                'UpdateURI' => 'Update URI',
             ], 'plugin');
 
             $this->pluginFile = $pluginFile;
             $this->pluginSlug = plugin_basename($pluginFile);
+
+            if (!empty($this->meta['UpdateURI'])) {
+                $path = parse_url($this->meta['UpdateURI'], PHP_URL_PATH);
+                $this->meta['GitHubRepo'] = trim($path, '/');
+            }
 
             if (!empty($this->meta['ReleaseChannels'])) {
                 $this->releaseChannels = array_map('trim', explode(',', $this->meta['ReleaseChannels']));
@@ -71,9 +77,6 @@ return function (string $pluginFile) {
                 do_action('qm/debug', "not our plugin: {$this->pluginSlug} !== {$incoming}");
                 return $update;
             }
-
-            $path = parse_url($pluginData['UpdateURI'], PHP_URL_PATH);
-            $this->meta['GitHubRepo'] = substr($path, 1);
 
             $releases = $this->getLatestViableReleases();
             if ($releases == false) {
@@ -196,7 +199,7 @@ return function (string $pluginFile) {
             if (is_wp_error($response)) {
                 return false;
             }
-            do_action('qm/debug', wp_remote_retrieve_body($response));
+            do_action('qm/debug', 'releases api call response ' . wp_remote_retrieve_body($response));
             $data = json_decode(wp_remote_retrieve_body($response), true);
 
             if (empty($data)) {
@@ -258,6 +261,7 @@ return function (string $pluginFile) {
                 if (empty($info)) {
                     continue;
                 }
+                do_action('qm/debug', 'info from array filter: ' . var_export($info, true));
 
                 // skip releases that don't have a zip asset
                 $zip = array_filter($release['assets'], function ($asset) {
@@ -285,7 +289,7 @@ return function (string $pluginFile) {
 
                 // hey, looks good. let's fetch the info.json file and check it.
                 $args = $this->prepRequestHeaders();
-                do_action('qm/debug', $info['browser_download_url']);
+                do_action('qm/debug', 'info browser download url ' . var_export($info['browser_download_url'], true));
                 $response = wp_remote_get(
                     $info['browser_download_url'],
                     $args

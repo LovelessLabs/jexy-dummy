@@ -48,6 +48,18 @@ return function (string $pluginFile) {
             // debugging
             do_action('qm/debug', 'plugin file passed to constructor: ' . $pluginFile);
             do_action('qm/debug', 'plugin slug from file: ' . $this->pluginSlug);
+
+            /**
+             * Data urls are not evil. This allows us to use embedded icons and banners in the plugin
+             * update-info.json response. Without this, esc_url() will strip out the data: protocol.
+             *
+             * @since 1.0.0
+             */
+            add_filter('kses_allowed_protocols', function ($protocols) {
+                $protocols[] = 'data';
+                return $protocols;
+            });
+
             add_filter('update_plugins_github.com', [$this, 'onUpdateGitHubPlugins'], 10, 4);
         }
 
@@ -82,26 +94,6 @@ return function (string $pluginFile) {
             if ($releases == false) {
                 return $update;
             }
-
-            // $update->response[$this->pluginSlug] = (object) [
-            //     'slug' => $this->pluginSlug,
-            //     'plugin' => $this->pluginSlug,
-            //     'new_version' => $releases['new_version'],
-            //     'package' => $releases['package'],
-            //     'url' => $releases['url'],
-            //     'icons' => [
-            //         '1x' => 'https://raw.githubusercontent.com/jexy-org/jexy-dummy/main/assets/icon-128x128.png',
-            //         '2x' => 'https://raw.githubusercontent.com/jexy-org/jexy-dummy/main/assets/icon-256x256.png',
-            //     ],
-            //     'banners' => [
-            //         'low' => 'https://raw.githubusercontent.com/jexy-org/jexy-dummy/main/assets/banner-772x250.png',
-            //         'high' => 'https://raw.githubusercontent.com/jexy-org/jexy-dummy/main/assets/banner-1544x500.png',
-            //     ],
-            //     'banners_rtl' => [
-            //         'low' => 'https://raw.githubusercontent.com/jexy-org/jexy-dummy/main/assets/banner-772x250.png',
-            //         'high' => 'https://raw.githubusercontent.com/jexy-org/jexy-dummy/main/assets/banner-1544x500.png',
-            //     ],
-            // ];
 
             // TODO determine selection for viable update channels.
             // for now, we return the first one that's not null
@@ -309,9 +301,30 @@ return function (string $pluginFile) {
                 do_action('qm/debug', wp_remote_retrieve_body($response));
                 $data = json_decode(wp_remote_retrieve_body($response));
                 if (!empty($data)) {
-                    // $data['download_url'] = $zip['browser_download_url'];
+                    /**
+                     * Key word being "should" ... but list_plugin_updates() in wp-admin/update-core.php
+                     * expects a mixed object/array, so we'll convert some elements to arrays.
+                     *
+                     * @since 1.0.0
+                     */
                     if ($data->package === 'browser_download_url') {
+                        // TODO if this is a private repository, following the redirect link gets us
+                        // an AWS signed objects.githubusercontent.com link with a 5 minute expiration.
+                        // Get that link and use it instead so we don't have to manipulate the
+                        // download_url() call.
                         $data->package = $zip['browser_download_url'];
+                    }
+                    // $data->icons has to be an array
+                    if (isset($data->icons)) {
+                        $data->icons = (array) $data->icons;
+                    }
+                    // $data->banners has to be an array
+                    if (isset($data->banners)) {
+                        $data->banners = (array) $data->banners;
+                    }
+                    // $data->sections has to be an array
+                    if (isset($data->sections)) {
+                        $data->sections = (array) $data->sections;
                     }
                     $latest[$channel] = $data;
                 }

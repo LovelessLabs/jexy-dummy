@@ -17,7 +17,13 @@ CMDBUILDBLOCKS ?= npm run build
 CMDBUILDADMIN ?= npm run build:admin
 
 # we copy the whole directory in here first,
-# then set the next version, then build the plugin
+# then set the next version, then build the plugin.
+# this is so we can build the plugin without
+# having to commit the version number change, and can
+# recursively set the version number wherever it is used,
+# PRIOR to building the plugin.
+# It's possible this could be done as part of the cpio .stage-building
+# process, but we'll explore that later.
 STAGEDIR ?= .stage
 
 all: target-list
@@ -147,7 +153,7 @@ infojson:
 		--rawfile DESCRIPTION readme-partials/02-description.txt \
 		--rawfile INSTALLATION readme-partials/03-installation.txt \
 		--rawfile FAQ readme-partials/04-faq.txt \
-		-M '. + {version:$$NEXTVERSION,last_updated:(now|todate),sections:{changelog:$$CHANGELOG,description:$$DESCRIPTION,installation:$$INSTALLATION,faq:$$FAQ}}' updater-info.json > build/info.json
+		-M '. + {version:$$NEXTVERSION,last_updated:(now|strftime("%Y-%m-%d %H:%M:%S")),sections:{changelog:$$CHANGELOG,description:$$DESCRIPTION,installation:$$INSTALLATION,faq:$$FAQ}}' update-info.json > build/update-info.json
 .PHONY: infojson
 
 # package:

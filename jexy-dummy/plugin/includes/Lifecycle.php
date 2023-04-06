@@ -15,6 +15,10 @@ class Lifecycle
 
     private $pluginFile;
     private $meta = array();
+    private $pluginSlug;
+    private $cacheKey;
+    private $cacheAllowed = true;
+    public $updater;
 
     /**
      * Plugin instantiation method
@@ -37,12 +41,22 @@ class Lifecycle
 
         $this->meta = get_file_data($file, [
             'Version' => 'Version',
-            'Text Domain' => 'Text Domain',
-            'Domain Path' => 'Domain Path',
-            'GitHub Plugin URI' => 'GitHub Plugin URI',
+            'TextDomain' => 'Text Domain',
+            'DomainPath' => 'Domain Path',
+            'GitHubRepo' => 'GitHub Repo',
+            'ReleaseChannels' => 'Release Channels',
+            'RepoVisibility' => 'Repo Visibility',
         ], 'plugin');
 
         $this->pluginFile = $file;
+        $this->pluginSlug = plugin_basename($file);
+        $this->cacheKey = $this->pluginSlug . '_updater';
+
+        // add_action('plugins_loaded', [$this, 'onPluginsLoaded']);
+
+        // all the GitHub updater logic for releases is setup like this:
+        $updater = require_once(__DIR__ . '/updatePluginsGitHub.php');
+        $this->updater = $updater($this->pluginFile);
     }
 
     public static function onActivation()
@@ -60,5 +74,20 @@ class Lifecycle
         self::$instance = new self($file);
 
         return self::$instance;
+    }
+
+    /**
+     * Handle Plugin Updates
+     *
+     */
+    public function onPluginsLoaded()
+    {
+        // add_filter('pre_set_site_transient_update_plugins', [$this, 'onPreSetSiteTransientUpdatePlugins']);
+
+        // add_filter('plugins_api', [$this, 'onPluginsApi'], 20, 3);
+        // add_filter('site_transient_update_plugins', [$this, 'onSiteTransientUpdatePlugins']);
+        // add_action('upgrader_process_complete', [$this, 'onUpgraderProcessComplete'], 10, 2);
+
+        add_filter('update_plugins_jexy.com', [$this, 'onUpdateJexyPlugins'], 10, 4);
     }
 }

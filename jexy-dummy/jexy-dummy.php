@@ -14,9 +14,9 @@
  * Version:           RELEASE_VERSION
  * Author:            Loveless Labs
  * Author URI:        https://lovelesslabs.com/
- * GitHub URI:        https://github.com/LovelessLabs/jexy-dummy
- * GitHub Plugin URI: LovelessLabs/jexy-dummy
- * Release Asset:     true
+ * Update URI:        https://github.com/lovelesslabs/jexy-dummy
+ * Release Channels:  stable,beta,alpha,next
+ * Repo Visibility:   public
  * License:           MIT
  * Requires PHP:      7.4
  * Requires at least: 6.1

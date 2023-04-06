@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-alpha.29](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) (2023-04-06)
+
+
+### Fixed
+
+* account for not requiring redundant GitHubRepo header ([97ec739](https://github.com/LovelessLabs/jexy-dummy/commit/97ec739cbabf380213207c16781cf4c2905285da))
+
 ## [1.0.0-alpha.28](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.27...v1.0.0-alpha.28) (2023-04-06)
 
 

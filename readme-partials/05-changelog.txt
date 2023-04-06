@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.29 =
+*Release Date 6th April 2023*
+
+* Fix - account for not requiring redundant GitHubRepo header
+
+See the complete [1.0.0-alpha.29 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) for full details.
+
 = 1.0.0-alpha.28 =
 *Release Date 6th April 2023*
 

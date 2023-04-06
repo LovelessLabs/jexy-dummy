@@ -72,6 +72,9 @@ return function (string $pluginFile) {
                 return $update;
             }
 
+            $path = parse_url($pluginData['UpdateURI'], PHP_URL_PATH);
+            $this->meta['GitHubRepo'] = substr($path, 1);
+
             $releases = $this->getLatestViableReleases();
             if ($releases == false) {
                 return $update;

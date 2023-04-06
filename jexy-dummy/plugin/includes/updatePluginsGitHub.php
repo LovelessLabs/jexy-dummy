@@ -59,7 +59,7 @@ return function (string $pluginFile) {
         public function onUpdateGitHubPlugins($update, $pluginFile, $pluginData, $locales)
         {
             // debugging
-            do_action('qm/debug', $pluginData);
+            do_action('qm/debug', print_r($pluginData, true));
 
             // if this is not our plugin, bail
             if ($this->pluginFile !== $pluginFile) {
@@ -187,7 +187,7 @@ return function (string $pluginFile) {
             if (is_wp_error($response)) {
                 return false;
             }
-
+            do_action('qm/debug', wp_remote_retrieve_body($response));
             $data = json_decode(wp_remote_retrieve_body($response), true);
 
             if (empty($data)) {
@@ -276,6 +276,7 @@ return function (string $pluginFile) {
 
                 // hey, looks good. let's fetch the info.json file and check it.
                 $args = $this->prepRequestHeaders();
+                do_action('qm/debug', $info['browser_download_url']);
                 $response = wp_remote_get(
                     $info['browser_download_url'],
                     $args
@@ -288,6 +289,7 @@ return function (string $pluginFile) {
 
                 // the response _should_ be ready to decode and hand back without
                 // any further processing other than assigning the browser_download_url
+                do_action('qm/debug', wp_remote_retrieve_body($response));
                 $data = json_decode(wp_remote_retrieve_body($response));
                 if (!empty($data)) {
                     // $data['download_url'] = $zip['browser_download_url'];

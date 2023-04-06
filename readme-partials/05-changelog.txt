@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.23 =
+*Release Date 6th April 2023*
+
+* New - support GitHub updates using Update URI
+
+See the complete [1.0.0-alpha.23 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) for full details.
+
 = 1.0.0-alpha.22 =
 *Release Date 5th April 2023*
 

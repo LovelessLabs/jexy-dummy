@@ -79,9 +79,9 @@
             "label": "jexy-dummy ${nextRelease.version} (tar.gz)"
           },
           {
-            "path": "build/info.json",
-            "name": "info.json",
-            "label": "jexy-dummy info.json"
+            "path": "build/update-info.json",
+            "name": "update-info.json",
+            "label": "jexy-dummy update-info.json"
           }
         ]
       }

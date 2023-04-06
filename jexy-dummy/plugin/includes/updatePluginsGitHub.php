@@ -260,6 +260,8 @@ return function (string $pluginFile) {
                 });
                 if (empty($info)) {
                     continue;
+                } else {
+                    $info = reset($info);
                 }
                 do_action('qm/debug', 'info from array filter: ' . var_export($info, true));
 
@@ -269,6 +271,8 @@ return function (string $pluginFile) {
                 });
                 if (empty($zip)) {
                     continue;
+                } else {
+                    $zip = reset($zip);
                 }
 
                 // skip release channels we don't want (or don't recognize)

@@ -52,12 +52,12 @@ return function (string $pluginFile) {
          * @see https://developer.wordpress.org/reference/hooks/update_plugins_hostname/
          *
          * @param mixed $update
-         * @param string $pluginFile
-         * @param array $pluginData
+         * @param string $pluginData
+         * @param array $pluginFile
          * @param mixed $locales
          * @return mixed
          */
-        public function onUpdateGitHubPlugins($update, $pluginFile, $pluginData, $locales)
+        public function onUpdateGitHubPlugins($update, $pluginData, $pluginFile, $locales)
         {
             // debugging
             do_action('qm/debug', 'update: should be mixed, is: ' . var_export($update, true));

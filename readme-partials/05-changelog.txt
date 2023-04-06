@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.31 =
+*Release Date 6th April 2023*
+
+* Fix - extract the matching array on array_filter
+
+See the complete [1.0.0-alpha.31 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) for full details.
+
 = 1.0.0-alpha.30 =
 *Release Date 6th April 2023*
 

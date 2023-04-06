@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0-alpha.31](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2023-04-06)
+
+
+### Fixed
+
+* extract the matching array on array_filter ([3c551df](https://github.com/LovelessLabs/jexy-dummy/commit/3c551df528f62508a6600c8a4a2369150f709567))
+
 ## [1.0.0-alpha.30](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2023-04-06)
 
 

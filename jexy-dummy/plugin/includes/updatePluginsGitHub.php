@@ -40,7 +40,8 @@ return function (string $pluginFile) {
                 $this->releaseChannels = array_map('trim', explode(',', $this->meta['ReleaseChannels']));
             }
             // debugging
-            do_action('qm/debug', $pluginFile);
+            do_action('qm/debug', 'plugin file passed to constructor: ' . $pluginFile);
+            do_action('qm/debug', 'plugin slug from file: ' . $this->pluginSlug);
             add_filter('update_plugins_github.com', [$this, 'onUpdateGitHubPlugins'], 10, 4);
         }
 
@@ -59,10 +60,15 @@ return function (string $pluginFile) {
         public function onUpdateGitHubPlugins($update, $pluginFile, $pluginData, $locales)
         {
             // debugging
-            do_action('qm/debug', print_r($pluginData, true));
+            do_action('qm/debug', 'update: should be mixed, is: ' . var_export($update, true));
+            do_action('qm/debug', 'pluginFile: should be string, is: ' . $pluginFile);
+            do_action('qm/debug', 'pluginData: should be array, is: ' . print_r($pluginData, true));
+
+            $incoming = plugin_basename($pluginFile);
 
             // if this is not our plugin, bail
-            if ($this->pluginFile !== $pluginFile) {
+            if ($this->pluginSlug !== $incoming) {
+                do_action('qm/debug', "not our plugin: {$this->pluginSlug} !== {$incoming}");
                 return $update;
             }
 

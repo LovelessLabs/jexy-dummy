@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.30 =
+*Release Date 6th April 2023*
+
+* Fix - pull the repo when we know we have it
+
+See the complete [1.0.0-alpha.30 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) for full details.
+
 = 1.0.0-alpha.29 =
 *Release Date 6th April 2023*
 

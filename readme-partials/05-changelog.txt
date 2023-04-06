@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.0.0-alpha.28 =
+*Release Date 6th April 2023*
+
+* Fix - put file and data in the right order
+
+See the complete [1.0.0-alpha.28 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.27...v1.0.0-alpha.28) for full details.
+
 = 1.0.0-alpha.27 =
 *Release Date 6th April 2023*
 

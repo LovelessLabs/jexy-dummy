@@ -3,7 +3,7 @@
         'name' => 'jexy/dummy',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '20abf02d331357c9751bce9a4368048b2681eb5e',
+        'reference' => 'f8aa3916cc631ee60b332a17efcf4850f0086d10',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'dubya/foundation' => array(
             'pretty_version' => 'dev-next',
             'version' => 'dev-next',
-            'reference' => 'cf32f9878fb234cf487c1f9926d31c713100bb29',
+            'reference' => '502531008e0f1e90d0f7fee0a45b6add87ad8480',
             'type' => 'library',
             'install_path' => __DIR__ . '/../dubya/foundation',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'jexy/dummy' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '20abf02d331357c9751bce9a4368048b2681eb5e',
+            'reference' => 'f8aa3916cc631ee60b332a17efcf4850f0086d10',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

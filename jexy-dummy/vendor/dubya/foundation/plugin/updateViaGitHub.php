@@ -191,7 +191,7 @@ return function (string $pluginFile) {
             }
 
             // apply Markdown parsing to the release notes
-            $parsedown = require_once(dirname(__DIR__) . 'util/parsedown.php');
+            $parsedown = require_once(dirname(__DIR__) . '/util/parsedown.php');
             foreach ($update->sections as $section => $content) {
                 $update->sections[$section] = $parsedown->text($content);
             }

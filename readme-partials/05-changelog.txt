@@ -1,169 +1,176 @@
-== Changelog ==
+## Changelog
 
-= 1.0.0-alpha.32 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.33
+_Release Date 7th April 2023_
+
+* Fix - move updateViaGitHub to Dubya
+
+See the complete [1.0.0-alpha.33 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.32...v1.0.0-alpha.33) for full details.
+
+### 1.0.0-alpha.32
+_Release Date 6th April 2023_
 
 * Fix - add object-to-array adjustments to update-info response
 
 See the complete [1.0.0-alpha.32 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) for full details.
 
-= 1.0.0-alpha.31 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.31
+_Release Date 6th April 2023_
 
 * Fix - extract the matching array on array_filter
 
 See the complete [1.0.0-alpha.31 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) for full details.
 
-= 1.0.0-alpha.30 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.30
+_Release Date 6th April 2023_
 
 * Fix - pull the repo when we know we have it
 
 See the complete [1.0.0-alpha.30 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) for full details.
 
-= 1.0.0-alpha.29 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.29
+_Release Date 6th April 2023_
 
 * Fix - account for not requiring redundant GitHubRepo header
 
 See the complete [1.0.0-alpha.29 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) for full details.
 
-= 1.0.0-alpha.28 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.28
+_Release Date 6th April 2023_
 
 * Fix - put file and data in the right order
 
 See the complete [1.0.0-alpha.28 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.27...v1.0.0-alpha.28) for full details.
 
-= 1.0.0-alpha.27 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.27
+_Release Date 6th April 2023_
 
 * Fix - more debug about plugin file
 
 See the complete [1.0.0-alpha.27 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.26...v1.0.0-alpha.27) for full details.
 
-= 1.0.0-alpha.26 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.26
+_Release Date 6th April 2023_
 
 * Fix - add more debug calls
 
 See the complete [1.0.0-alpha.26 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.25...v1.0.0-alpha.26) for full details.
 
-= 1.0.0-alpha.25 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.25
+_Release Date 6th April 2023_
 
 * Fix - include the file with the right name
 
 See the complete [1.0.0-alpha.25 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.24...v1.0.0-alpha.25) for full details.
 
-= 1.0.0-alpha.24 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.24
+_Release Date 6th April 2023_
 
 * Fix - debug entry into update handler
 
 See the complete [1.0.0-alpha.24 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.23...v1.0.0-alpha.24) for full details.
 
-= 1.0.0-alpha.23 =
-*Release Date 6th April 2023*
+### 1.0.0-alpha.23
+_Release Date 6th April 2023_
 
 * New - support GitHub updates using Update URI
 
 See the complete [1.0.0-alpha.23 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) for full details.
 
-= 1.0.0-alpha.22 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.22
+_Release Date 5th April 2023_
 
 * Fix - info:** format time correctly
 
 See the complete [1.0.0-alpha.22 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) for full details.
 
-= 1.0.0-alpha.21 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.21
+_Release Date 5th April 2023_
 
 * Fix - add current time to info.json
 
 See the complete [1.0.0-alpha.21 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) for full details.
 
-= 1.0.0-alpha.20 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.20
+_Release Date 5th April 2023_
 
 * Fix - make sure build dir exists
 
 See the complete [1.0.0-alpha.20 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) for full details.
 
-= 1.0.0-alpha.19 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.19
+_Release Date 5th April 2023_
 
 * Fix - troubleshoot make fail
 
 See the complete [1.0.0-alpha.19 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) for full details.
 
-= 1.0.0-alpha.18 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.18
+_Release Date 5th April 2023_
 
 * Fix - add info.json to release
 
 See the complete [1.0.0-alpha.18 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) for full details.
 
-= 1.0.0-alpha.17 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.17
+_Release Date 5th April 2023_
 
 * Fix - just testing git updater
 
 See the complete [1.0.0-alpha.17 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) for full details.
 
-= 1.0.0-alpha.16 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.16
+_Release Date 5th April 2023_
 
 * Fix - add Git Updater headers
 
 See the complete [1.0.0-alpha.16 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) for full details.
 
-= 1.0.0-alpha.15 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.15
+_Release Date 5th April 2023_
 
 * Fix - move changeset link to end of changes
 
 See the complete [1.0.0-alpha.15 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) for full details.
 
-= 1.0.0-alpha.14 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.14
+_Release Date 5th April 2023_
 
 * Fix - add missing readme headers
 
 See the complete [1.0.0-alpha.14 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) for full details.
 
-= 1.0.0-alpha.13 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.13
+_Release Date 5th April 2023_
 
 * Fix - use GITHUB_WORKSPACE path
 
 See the complete [1.0.0-alpha.13 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) for full details.
 
-= 1.0.0-alpha.12 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.12
+_Release Date 5th April 2023_
 
 * Fix - bullet-list changes in the readme
 
 See the complete [1.0.0-alpha.12 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) for full details.
 
-= 1.0.0-alpha.11 =
-*Release Date 5th April 2023*
+### 1.0.0-alpha.11
+_Release Date 5th April 2023_
 
 * Fix - include a real WordPress readme.txt
 
 See the complete [1.0.0-alpha.11 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) for full details.
 
-= 1.0.0-alpha.10 =
-*Release Date 4th April 2023*
+### 1.0.0-alpha.10
+_Release Date 4th April 2023_
 
 * Fix - add config and options
 * Fix - try passing releases again
 
 See the complete [1.0.0-alpha.10 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) for full details.
 
-= 1.0.0-alpha.9 =
-*Release Date 4th April 2023*
+### 1.0.0-alpha.9
+_Release Date 4th April 2023_
 
 * Fix - add lastRelease and commits
 * Fix - more experiments with prepare hook
@@ -171,57 +178,57 @@ See the complete [1.0.0-alpha.10 changeset](https://github.com/LovelessLabs/jexy
 
 See the complete [1.0.0-alpha.9 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) for full details.
 
-= 1.0.0-alpha.8 =
-*Release Date 4th April 2023*
+### 1.0.0-alpha.8
+_Release Date 4th April 2023_
 
 * Fix - try stringify
 
 See the complete [1.0.0-alpha.8 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) for full details.
 
-= 1.0.0-alpha.7 =
-*Release Date 4th April 2023*
+### 1.0.0-alpha.7
+_Release Date 4th April 2023_
 
 * Fix - add more args
 
 See the complete [1.0.0-alpha.7 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) for full details.
 
-= 1.0.0-alpha.6 =
-*Release Date 4th April 2023*
+### 1.0.0-alpha.6
+_Release Date 4th April 2023_
 
 * Fix - check stdin
 
 See the complete [1.0.0-alpha.6 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) for full details.
 
-= 1.0.0-alpha.5 =
-*Release Date 4th April 2023*
+### 1.0.0-alpha.5
+_Release Date 4th April 2023_
 
 * Fix - see what args come in if we don't specify any
 
 See the complete [1.0.0-alpha.5 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) for full details.
 
-= 1.0.0-alpha.4 =
-*Release Date 4th April 2023*
+### 1.0.0-alpha.4
+_Release Date 4th April 2023_
 
 * Fix - be careful on exporting env
 
 See the complete [1.0.0-alpha.4 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) for full details.
 
-= 1.0.0-alpha.3 =
-*Release Date 4th April 2023*
+### 1.0.0-alpha.3
+_Release Date 4th April 2023_
 
 * Fix - see what wordpress-changelog gets us
 
 See the complete [1.0.0-alpha.3 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) for full details.
 
-= 1.0.0-alpha.2 =
-*Release Date 4th April 2023*
+### 1.0.0-alpha.2
+_Release Date 4th April 2023_
 
 * Fix - use simpler GitHub URI tag in header
 
 See the complete [1.0.0-alpha.2 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) for full details.
 
-= 1.0.0-alpha.1 =
-*Release Date 3rd April 2023*
+### 1.0.0-alpha.1
+_Release Date 3rd April 2023_
 
 * New - basic do-nothing plugin
 * Fix - be less picky about installing deps

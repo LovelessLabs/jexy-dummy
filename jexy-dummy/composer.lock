@@ -4,12 +4,58 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72e05d3b93fba7e3b480bdff00654eca",
-    "packages": [],
+    "content-hash": "60ece112cd9791d4d042b24e84331a38",
+    "packages": [
+        {
+            "name": "dubya/foundation",
+            "version": "dev-next",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dubyaio/foundation.git",
+                "reference": "cf32f9878fb234cf487c1f9926d31c713100bb29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dubyaio/foundation/zipball/cf32f9878fb234cf487c1f9926d31c713100bb29",
+                "reference": "cf32f9878fb234cf487c1f9926d31c713100bb29",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-pcre": "*",
+                "php": ">=7.4.0 || ^8.0 || ^8.1 || ^8.2"
+            },
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clay Loveless",
+                    "homepage": "https://github.com/claylo"
+                }
+            ],
+            "description": "Missing pieces for modern WordPress development.",
+            "homepage": "https://dubya.io/",
+            "keywords": [
+                "actions",
+                "dubya",
+                "filters",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/dubyaio/foundation/tree/next",
+                "issues": "https://github.com/dubyaio/foundation/issues"
+            },
+            "time": "2023-04-07T04:14:12+00:00"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "dubya/foundation": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

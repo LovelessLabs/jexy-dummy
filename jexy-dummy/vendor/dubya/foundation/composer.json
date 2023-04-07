@@ -1,0 +1,29 @@
+{
+  "name": "dubya/foundation",
+  "homepage": "https://dubya.io/",
+  "description": "Missing pieces for modern WordPress development.",
+  "type": "library",
+  "keywords": [
+    "wordpress",
+    "filters",
+    "actions",
+    "dubya"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Clay Loveless",
+      "homepage": "https://github.com/claylo"
+    }
+  ],
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "preferred-install": "dist"
+  },
+  "require": {
+    "php": ">=7.4.0 || ^8.0 || ^8.1 || ^8.2",
+    "ext-pcre": "*",
+    "ext-json": "*"
+  }
+}

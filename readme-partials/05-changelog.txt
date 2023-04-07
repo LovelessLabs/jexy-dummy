@@ -1,5 +1,12 @@
 ## Changelog
 
+### 1.0.0-alpha.34
+_Release Date 7th April 2023_
+
+* Fix - path usage, order of sections
+
+See the complete [1.0.0-alpha.34 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.33...v1.0.0-alpha.34) for full details.
+
 ### 1.0.0-alpha.33
 _Release Date 7th April 2023_
 

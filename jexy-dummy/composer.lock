@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dubyaio/foundation.git",
-                "reference": "cf32f9878fb234cf487c1f9926d31c713100bb29"
+                "reference": "502531008e0f1e90d0f7fee0a45b6add87ad8480"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dubyaio/foundation/zipball/cf32f9878fb234cf487c1f9926d31c713100bb29",
-                "reference": "cf32f9878fb234cf487c1f9926d31c713100bb29",
+                "url": "https://api.github.com/repos/dubyaio/foundation/zipball/502531008e0f1e90d0f7fee0a45b6add87ad8480",
+                "reference": "502531008e0f1e90d0f7fee0a45b6add87ad8480",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "source": "https://github.com/dubyaio/foundation/tree/next",
                 "issues": "https://github.com/dubyaio/foundation/issues"
             },
-            "time": "2023-04-07T04:14:12+00:00"
+            "time": "2023-04-07T04:38:52+00:00"
         }
     ],
     "packages-dev": [],

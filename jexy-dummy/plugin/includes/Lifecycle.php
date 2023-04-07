@@ -55,7 +55,7 @@ class Lifecycle
         // add_action('plugins_loaded', [$this, 'onPluginsLoaded']);
 
         // all the GitHub updater logic for releases is setup like this:
-        $updater = require_once(dirname(__DIR__) . '/vendor/dubya/foundation/plugin/updateViaGitHub.php');
+        $updater = require_once(dirname(__DIR__, 2) . '/vendor/dubya/foundation/plugin/updateViaGitHub.php');
         $this->updater = $updater($this->pluginFile);
     }
 

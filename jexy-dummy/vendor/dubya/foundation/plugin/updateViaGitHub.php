@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * This anonymous class encapsulates the plugin update logic for managing updates
+ * via GitHub. All necessary hooks are registered for you. All you need to do is add
+ * the following to your plugin's main file:
+ *
+ * $updater = require_once __DIR__ . '/updateViaGitHub.php';
+ * $updater(__FILE__);
+ *
+ * See the documentation for more information on configuring your GitHub repository
+ * to work seamlessly with this plugin.
+ *
+ * Internal Notes:
  * testing needs:
  * - get_file_data() returns an array of meta data
  * - plugin_basename() returns a string
@@ -17,6 +28,7 @@ return function (string $pluginFile) {
         protected $meta;
         protected $pluginFile;
         protected $pluginSlug;
+        protected $pluginDir;
         protected $releaseChannels = array(
             'stable'
         );
@@ -36,6 +48,7 @@ return function (string $pluginFile) {
 
             $this->pluginFile = $pluginFile;
             $this->pluginSlug = plugin_basename($pluginFile);
+            $this->pluginDir = dirname($this->pluginSlug);
 
             if (!empty($this->meta['UpdateURI'])) {
                 $path = parse_url($this->meta['UpdateURI'], PHP_URL_PATH);
@@ -61,6 +74,7 @@ return function (string $pluginFile) {
             });
 
             add_filter('update_plugins_github.com', [$this, 'onUpdateGitHubPlugins'], 10, 4);
+            add_filter('plugins_api', [$this, 'onPluginsApi'], 10, 3);
         }
 
         /**
@@ -78,9 +92,9 @@ return function (string $pluginFile) {
         public function onUpdateGitHubPlugins($update, $pluginData, $pluginFile, $locales)
         {
             // debugging
-            do_action('qm/debug', 'update: should be mixed, is: ' . var_export($update, true));
-            do_action('qm/debug', 'pluginFile: should be string, is: ' . $pluginFile);
-            do_action('qm/debug', 'pluginData: should be array, is: ' . print_r($pluginData, true));
+            do_action('qm/debug', 'onUpdateGitHubPlugins update: should be mixed, is: ' . var_export($update, true));
+            do_action('qm/debug', 'onUpdateGitHubPlugins pluginFile: should be string, is: ' . $pluginFile);
+            do_action('qm/debug', 'onUpdateGitHubPlugins pluginData: should be array, is: ' . print_r($pluginData, true));
 
             $incoming = plugin_basename($pluginFile);
 
@@ -90,9 +104,77 @@ return function (string $pluginFile) {
                 return $update;
             }
 
+            $update = $this->getLatestRelease();
+
+            return $update;
+        }
+
+        public function onPluginsApi($result, $action, $args)
+        {
+            // debugging
+            do_action('qm/debug', 'onPluginsApi result: should be mixed, is: ' . var_export($result, true));
+            do_action('qm/debug', 'onPluginsApi action: should be string, is: ' . $action);
+            do_action('qm/debug', 'onPluginsApi args: should be array, is: ' . print_r($args, true));
+
+            // we only want to handle the plugin information request
+            if ($action !== 'plugin_information') {
+                return $result;
+            }
+
+            if (dirname($this->pluginSlug) !== $args->slug) {
+                return $result;
+            }
+
+            $latest = $this->getLatestRelease();
+
+            if ($latest === false) {
+                return $result;
+            }
+
+            // $result = new stdClass();
+            // $result->name = $update->name;
+            // $result->slug = $this->pluginSlug;
+            // $result->version = $update->version;
+            // $result->author = $update->author;
+            // $result->author_profile = $update->author_profile;
+            // $result->requires = $update->requires;
+            // $result->tested = $update->tested;
+            // $result->requires_php = $update->requires_php;
+            // $result->last_updated = $update->last_updated;
+            // $result->homepage = $update->homepage;
+            // $result->download_link = $update->download_link;
+            // $result->banners = $update->banners;
+            // $result->icons = $update->icons;
+            // $result->sections = $update->sections;
+            // $result->short_description = $update->short_description;
+            // $result->tags = $update->tags;
+            // $result->contributors = $update->contributors;
+            // $result->donate_link = $update->donate_link;
+            // $result->rating = $update->rating;
+            // $result->num_ratings = $update->num_ratings;
+            // $result->active_installs = $update->active_installs;
+            // $result->added = $update->added;
+            // $result->compatibility = $update->compatibility;
+            // $result->upgrade_notice = $update->upgrade_notice;
+
+            // this stuff is all part of what we put in the update-info.json anyway.
+            // return that for now and see what we get.
+            $result = $latest;
+            return $result;
+        }
+
+        /**
+         * Get the latest release for this plugin.
+         *
+         * @since 1.0.0
+         *
+         * @return array|null
+         */
+        private function getLatestRelease()
+        {
             $releases = $this->getLatestViableReleases();
             if ($releases == false) {
-                return $update;
+                return $releases;
             }
 
             // TODO determine selection for viable update channels.
@@ -104,6 +186,15 @@ return function (string $pluginFile) {
                 }
             }
 
+            if (!isset($update)) {
+                return false;
+            }
+
+            // apply Markdown parsing to the release notes
+            $parsedown = require_once(dirname(__DIR__) . 'util/parsedown.php');
+            foreach ($update->sections as $section => $content) {
+                $update->sections[$section] = $parsedown->text($content);
+            }
             return $update;
         }
 

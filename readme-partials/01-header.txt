@@ -1,8 +1,8 @@
-=== Jexy Dummy ===
+# Jexy Dummy
 Contributors: claylo
 Tags: plugin, template
 Requires at least: 3.0.1
-Tested up to: 6.1.1
+Tested up to: 6.2
 Stable tag: RELEASE_VERSION
 License: MIT
 License URI: http://opensource.org/licenses/MIT

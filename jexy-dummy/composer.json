@@ -19,5 +19,14 @@
         "blocks/src/"
       ]
     }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/dubyaio/foundation.git"
+    }
+  ],
+  "require": {
+    "dubya/foundation": "dev-next"
   }
 }

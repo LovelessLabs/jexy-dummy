@@ -101,10 +101,10 @@ foreach ($matches[0] as $i => $match_lines) {
     }
 }
 
-$out = '== Changelog ==' . PHP_EOL . PHP_EOL;
+$out = '## Changelog' . PHP_EOL . PHP_EOL;
 foreach ($releases as $release) {
-    $out .= "= {$release['version']} =" . PHP_EOL;
-    $out .= "*Release Date {$release['longDate']}*" . PHP_EOL . PHP_EOL;
+    $out .= "### {$release['version']}" . PHP_EOL;
+    $out .= "_Release Date {$release['longDate']}_" . PHP_EOL . PHP_EOL;
     $out .= implode(PHP_EOL, $release['changes']) . PHP_EOL . PHP_EOL;
     if (!empty($release['compareUrl'])) {
         $out .= "See the complete [{$release['version']} changeset]({$release['compareUrl']}) for full details." . PHP_EOL . PHP_EOL;

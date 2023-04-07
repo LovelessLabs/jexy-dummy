@@ -1,11 +1,13 @@
-== Description ==
+## Description
 
 What can be said about this dummy plugin? It's brilliant, of course!
 
-= Features =
+### Features
+
 * It updates from GitHub
 * It generates a WordPress readme.txt from GitHub Actions
 * It has a functional build setup for admin screens and blocks
 
-= Links =
+### Links
+
 * [GitHub](https://github.com/lovelesslabs/jexy-dummy)

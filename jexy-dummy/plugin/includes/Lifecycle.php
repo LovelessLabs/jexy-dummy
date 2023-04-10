@@ -59,7 +59,7 @@ class Lifecycle
         $this->pluginUpdaterGitHub($this->pluginFile);
 
         add_filter('dubya/format_release_notes', function ($update) {
-            $parsedown = require_once(dirname(__DIR__) . '/vendor/dubya/util/parsedown.php');
+            $parsedown = require_once(dirname(__DIR__, 2) . '/vendor/dubya/foundation/util/parsedown.php');
             foreach ($update->sections as $section => $content) {
                 $update->sections[$section] = $parsedown->text($content);
             }

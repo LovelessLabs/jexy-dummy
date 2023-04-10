@@ -1,5 +1,12 @@
 ## Changelog
 
+### 1.0.0-alpha.35
+_Release Date 10th April 2023_
+
+* New - use GitHub Updater trait
+
+See the complete [1.0.0-alpha.35 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.34...v1.0.0-alpha.35) for full details.
+
 ### 1.0.0-alpha.34
 _Release Date 7th April 2023_
 

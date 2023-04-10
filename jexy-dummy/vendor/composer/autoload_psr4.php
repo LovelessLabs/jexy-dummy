@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Jexy\\Dummy\\' => array($baseDir . '/plugin/includes', $baseDir . '/plugin/admin', $baseDir . '/plugin/public', $baseDir . '/blocks/src'),
+    'Dubya\\' => array($vendorDir . '/dubya/plugin-updater-github/src'),
 );

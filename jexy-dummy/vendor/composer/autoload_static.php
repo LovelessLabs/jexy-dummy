@@ -11,6 +11,10 @@ class ComposerStaticInit1e8107231b881e05426b18b4ba3d3c51
         array (
             'Jexy\\Dummy\\' => 11,
         ),
+        'D' => 
+        array (
+            'Dubya\\' => 6,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -21,10 +25,15 @@ class ComposerStaticInit1e8107231b881e05426b18b4ba3d3c51
             2 => __DIR__ . '/../..' . '/plugin/public',
             3 => __DIR__ . '/../..' . '/blocks/src',
         ),
+        'Dubya\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dubya/plugin-updater-github/src',
+        ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Dubya\\Plugin\\Updater\\GitHubTrait' => __DIR__ . '/..' . '/dubya/plugin-updater-github/src/Plugin/Updater/GitHubTrait.php',
         'Jexy\\Dummy\\Api' => __DIR__ . '/../..' . '/plugin/includes/Api.php',
         'Jexy\\Dummy\\Lifecycle' => __DIR__ . '/../..' . '/plugin/includes/Lifecycle.php',
         'Jexy\\Dummy\\Plugin' => __DIR__ . '/../..' . '/plugin/includes/Plugin.php',

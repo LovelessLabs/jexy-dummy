@@ -3,7 +3,7 @@
         'name' => 'jexy/dummy',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '84cb747847f5c888ae60f98d50189d000aa8772f',
+        'reference' => 'e1d50c32237b8ba1730e3221a3013e0ab8d9debe',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'dubya/plugin-updater-github' => array(
             'pretty_version' => 'dev-beta',
             'version' => 'dev-beta',
-            'reference' => '4f536b956c210e667e5df6c56a90e27a258801d0',
+            'reference' => '79e992a020a2bfcd0b657243938f693a477883ef',
             'type' => 'library',
             'install_path' => __DIR__ . '/../dubya/plugin-updater-github',
             'aliases' => array(),
@@ -31,7 +31,7 @@
         'jexy/dummy' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '84cb747847f5c888ae60f98d50189d000aa8772f',
+            'reference' => 'e1d50c32237b8ba1730e3221a3013e0ab8d9debe',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

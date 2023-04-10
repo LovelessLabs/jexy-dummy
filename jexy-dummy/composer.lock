@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dubyaio/plugin-updater-github.git",
-                "reference": "4f536b956c210e667e5df6c56a90e27a258801d0"
+                "reference": "79e992a020a2bfcd0b657243938f693a477883ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dubyaio/plugin-updater-github/zipball/4f536b956c210e667e5df6c56a90e27a258801d0",
-                "reference": "4f536b956c210e667e5df6c56a90e27a258801d0",
+                "url": "https://api.github.com/repos/dubyaio/plugin-updater-github/zipball/79e992a020a2bfcd0b657243938f693a477883ef",
+                "reference": "79e992a020a2bfcd0b657243938f693a477883ef",
                 "shasum": ""
             },
             "require": {
@@ -93,10 +93,10 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/dubyaio/plugin-updater-github/tree/v1.0.0-beta.3",
+                "source": "https://github.com/dubyaio/plugin-updater-github/tree/v1.0.0-beta.4",
                 "issues": "https://github.com/dubyaio/plugin-updater-github/issues"
             },
-            "time": "2023-04-10T22:54:40+00:00"
+            "time": "2023-04-10T23:19:28+00:00"
         }
     ],
     "packages-dev": [],

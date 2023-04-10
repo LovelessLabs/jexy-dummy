@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60ece112cd9791d4d042b24e84331a38",
+    "content-hash": "073fb34a67386a2813b06714ba565fe3",
     "packages": [
         {
             "name": "dubya/foundation",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dubyaio/foundation.git",
-                "reference": "502531008e0f1e90d0f7fee0a45b6add87ad8480"
+                "reference": "4a823151e9a45b2467efddbcea5b265c45d03acf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dubyaio/foundation/zipball/502531008e0f1e90d0f7fee0a45b6add87ad8480",
-                "reference": "502531008e0f1e90d0f7fee0a45b6add87ad8480",
+                "url": "https://api.github.com/repos/dubyaio/foundation/zipball/4a823151e9a45b2467efddbcea5b265c45d03acf",
+                "reference": "4a823151e9a45b2467efddbcea5b265c45d03acf",
                 "shasum": ""
             },
             "require": {
@@ -44,17 +44,67 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/dubyaio/foundation/tree/next",
+                "source": "https://github.com/dubyaio/foundation/tree/v1.0.0-next.1",
                 "issues": "https://github.com/dubyaio/foundation/issues"
             },
-            "time": "2023-04-07T04:38:52+00:00"
+            "time": "2023-04-10T19:29:41+00:00"
+        },
+        {
+            "name": "dubya/plugin-updater-github",
+            "version": "dev-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dubyaio/plugin-updater-github.git",
+                "reference": "4f536b956c210e667e5df6c56a90e27a258801d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dubyaio/plugin-updater-github/zipball/4f536b956c210e667e5df6c56a90e27a258801d0",
+                "reference": "4f536b956c210e667e5df6c56a90e27a258801d0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-pcre": "*",
+                "php": ">=7.4.0 || ^8.0 || ^8.1 || ^8.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dubya\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clay Loveless",
+                    "homepage": "https://github.com/claylo"
+                }
+            ],
+            "description": "A trait handling an Update URI implentation for GitHub-released plugins.",
+            "homepage": "https://dubya.io/",
+            "keywords": [
+                "dubya",
+                "php",
+                "php traits",
+                "plugins",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/dubyaio/plugin-updater-github/tree/v1.0.0-beta.3",
+                "issues": "https://github.com/dubyaio/plugin-updater-github/issues"
+            },
+            "time": "2023-04-10T22:54:40+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "dubya/foundation": 20
+        "dubya/foundation": 20,
+        "dubya/plugin-updater-github": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

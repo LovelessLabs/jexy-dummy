@@ -24,9 +24,14 @@
     {
       "type": "vcs",
       "url": "https://github.com/dubyaio/foundation.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/dubyaio/plugin-updater-github.git"
     }
   ],
   "require": {
-    "dubya/foundation": "dev-next"
+    "dubya/foundation": "dev-next",
+    "dubya/plugin-updater-github": "dev-beta"
   }
 }

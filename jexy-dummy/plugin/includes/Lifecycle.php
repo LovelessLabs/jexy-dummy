@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace Jexy\Dummy;
 
+use Dubya\Plugin\Updater\GitHubTrait;
+
 class Lifecycle
 {
+
+    use GitHubTrait;
+
     /**
      * Plugin instance property
      *
@@ -16,9 +21,6 @@ class Lifecycle
     private $pluginFile;
     private $meta = array();
     private $pluginSlug;
-    private $cacheKey;
-    private $cacheAllowed = true;
-    public $updater;
 
     /**
      * Plugin instantiation method
@@ -50,13 +52,19 @@ class Lifecycle
 
         $this->pluginFile = $file;
         $this->pluginSlug = plugin_basename($file);
-        $this->cacheKey = $this->pluginSlug . '_updater';
 
         // add_action('plugins_loaded', [$this, 'onPluginsLoaded']);
 
         // all the GitHub updater logic for releases is setup like this:
-        $updater = require_once(dirname(__DIR__, 2) . '/vendor/dubya/foundation/plugin/updateViaGitHub.php');
-        $this->updater = $updater($this->pluginFile);
+        $this->pluginUpdaterGitHub($this->pluginFile);
+
+        add_filter('dubya/format_release_notes', function ($update) {
+            $parsedown = require_once(dirname(__DIR__) . '/vendor/dubya/util/parsedown.php');
+            foreach ($update->sections as $section => $content) {
+                $update->sections[$section] = $parsedown->text($content);
+            }
+            return $update;
+        });
     }
 
     public static function onActivation()
@@ -88,6 +96,6 @@ class Lifecycle
         // add_filter('site_transient_update_plugins', [$this, 'onSiteTransientUpdatePlugins']);
         // add_action('upgrader_process_complete', [$this, 'onUpgraderProcessComplete'], 10, 2);
 
-        add_filter('update_plugins_jexy.com', [$this, 'onUpdateJexyPlugins'], 10, 4);
+        // add_filter('update_plugins_jexy.com', [$this, 'onUpdateJexyPlugins'], 10, 4);
     }
 }

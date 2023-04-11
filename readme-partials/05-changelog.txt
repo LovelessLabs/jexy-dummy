@@ -1,5 +1,12 @@
 ## Changelog
 
+### 1.0.0-alpha.37
+_Release Date 11th April 2023_
+
+* Fix - check status of entries first
+
+See the complete [1.0.0-alpha.37 changeset](https://github.com/LovelessLabs/jexy-dummy/compare/v1.0.0-alpha.36...v1.0.0-alpha.37) for full details.
+
 ### 1.0.0-alpha.36
 _Release Date 10th April 2023_
 
